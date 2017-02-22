@@ -38,7 +38,7 @@
 We represent the location variable st as where the model decides to focus attention when generating the t(th) word.
 st,i is an indicator one-hot variable which is set to 1 if the i-th location is the one used to extract visual features.
 soft 损失函数
-
+需要迭代地计算几个训练权重
 ### 4.2 Deterministic "Soft" Attention
 
 ### 4.3 Training Procedure
