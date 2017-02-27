@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-02-26T03:50:43-05:00</updated><id>/</id><title>Site Title</title><subtitle>Describe your website here.</subtitle><entry><title>Rcnn原理解释</title><link href="/rcnn%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/" rel="alternate" type="text/html" title="Rcnn原理解释" /><published>2017-02-03T00:00:00-05:00</published><updated>2017-02-03T00:00:00-05:00</updated><id>/rcnn原理解释</id><content type="html" xml:base="/rcnn%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/">&lt;h1 id=&quot;region-based-convolutional-networks-for-accurate-obeject-detection-and-segmentation&quot;&gt;“Region-based Convolutional Networks for Accurate Obeject Detection and Segmentation”&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.1.6">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2017-02-27T12:48:41-05:00</updated><id>/</id><title>Site Title</title><subtitle>Describe your website here.</subtitle><entry><title>Rcnn原理解释</title><link href="/rcnn%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/" rel="alternate" type="text/html" title="Rcnn原理解释" /><published>2017-02-03T00:00:00-05:00</published><updated>2017-02-03T00:00:00-05:00</updated><id>/rcnn原理解释</id><content type="html" xml:base="/rcnn%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A/">&lt;h1 id=&quot;region-based-convolutional-networks-for-accurate-obeject-detection-and-segmentation&quot;&gt;“Region-based Convolutional Networks for Accurate Obeject Detection and Segmentation”&lt;/h1&gt;
 
 &lt;h2 id=&quot;section&quot;&gt;*应用于物体定位与识别&lt;/h2&gt;
 
@@ -283,7 +283,70 @@ soft 损失函数
 
 &lt;p&gt;&lt;strong&gt;2.匹配结果使用BLEU metric表示.&lt;/strong&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;evaluation-procedures&quot;&gt;5.2 实验效果提升（Evaluation Procedures）&lt;/h3&gt;</content><summary>“Show, Attend and Tell:Neural Image Caption Generation with VIsual Attention”</summary></entry><entry><title>Syntax Highlighting Post</title><link href="/code-highlighting-post/" rel="alternate" type="text/html" title="Syntax Highlighting Post" /><published>2013-08-16T00:00:00-04:00</published><updated>2013-08-16T00:00:00-04:00</updated><id>/code-highlighting-post</id><content type="html" xml:base="/code-highlighting-post/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;h3 id=&quot;evaluation-procedures&quot;&gt;5.2 实验效果提升（Evaluation Procedures）&lt;/h3&gt;</content><summary>“Show, Attend and Tell:Neural Image Caption Generation with VIsual Attention”</summary></entry><entry><title>Prml 6</title><link href="/prml-6/" rel="alternate" type="text/html" title="Prml 6" /><published>2016-05-11T00:00:00-04:00</published><updated>2016-05-11T00:00:00-04:00</updated><id>/prml-6</id><content type="html" xml:base="/prml-6/">&lt;p&gt;“Chapter6-7 Kernel Methods and SVM”&lt;/p&gt;
+
+&lt;!--使用MathJax编辑latex公式--&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;##核函数技巧与支持向量基&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;section&quot;&gt;1.前言&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;在第三、四章中，我们详细地介绍了如何使用线性模型来进行分类和回归模型的学习，在这种学习过程中，一组训练数据通常用来获得点估计或者后验概率分布，整个训练是为了获得参数w，这种学习方法也适用于像神经网络这种非线性学习模型。
+&lt;em&gt;(In Chapters 3 and 4, we considered linear parametric models for regression and classification in which the form of the mapping y(x,w) from input x to output y is governed by a vector w of adaptive parameters.During the learning parse,a set of training data is used either to obtain a point estimate of the parameter vector or to determine a posterior distribution over this vector. The training data is then discarded, and predictions for new inputs are based purely on the learned parameter vector w.This approach is also used in nonlinear parametric models such as neural networks.)&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;除了上述的学习方法外，我们将接触一种新的学习方法，它通过保留训练过程中的有效数据集来形成判断函数，这种方法也蕴含在之前的最近邻判别方法中，都是使用已知的数据集来判断未来数据集的方法。这种方法通常需要一个矩阵来计算测试数据与训练数据之间的相似性，从而实现对测试数据的判断。&lt;em&gt;( However, there is a class of pattern recognition techniques,in which the training data points,or a subset of them, are kept and used also during the prediction phase.For instance, the Parzen probability density model comprised a linear combination of ‘kernel’ functions each one centered on one of the training data points.These are the examples of memory-based methods that involve storing the entire training set in order to make predictions for future ddata points.)&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--$$ evidence\_{i}=\sum \_{j}W\_{ij}x\_{j}+b\_{i} $$--&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;2. 对偶表达式&lt;/h2&gt;
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;我们定义一个参数由最小均方误差定义的线性回归模型:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\frac{1}{2}\sum_{n=1}^{N}{(w^T\phi(x_n) - t_n)}^2 + \frac{\lambda}{2}w^tw&lt;/script&gt;
+&lt;script type=&quot;math/tex&quot;&gt;{\lambda &gt;= 0}&lt;/script&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;其中\(\phi\)是设计出来的矩阵，向量\(\alpha = (\alpha_1,\dot)\)是设计用来替代\w\的参数，因此我们得到新的均方误差损失函数&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;对偶表达式的优势在于完全将表达式替换成了只与k有关的形式：&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;y(x) = w^t\phi(x) = \alpha^T\Phi\phi(x) =  k(x)^T{(K + \lambda{I_N})}^{-1}{t}&lt;/script&gt;
+
+&lt;h2 id=&quot;section-2&quot;&gt;3. 构造核函数&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;../images/kernels.jpg&quot; alt=&quot;constructing_kernels&quot; /&gt;
+—&lt;/p&gt;
+
+&lt;h2 id=&quot;section-3&quot;&gt;4. 基于高斯过程的回归&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In order to apply Gasussian process models to the problem of regression, we need to take account of the noise on the observeed target values, which are given by &lt;script type=&quot;math/tex&quot;&gt;t_n = y_n + {\epsilon}_n&lt;/script&gt;, 其中\(y_n\)是函数输出，\(\epsilon\)是随机噪声变量&lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;当我们考虑噪声为高斯分布时，有$$p(t_n&lt;/td&gt;
+          &lt;td&gt;y_n)=\mathcal{N}(y&lt;/td&gt;
+          &lt;td&gt;0,K)$$&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content><summary>“Chapter6-7 Kernel Methods and SVM”</summary></entry><entry><title>Syntax Highlighting Post</title><link href="/code-highlighting-post/" rel="alternate" type="text/html" title="Syntax Highlighting Post" /><published>2013-08-16T00:00:00-04:00</published><updated>2013-08-16T00:00:00-04:00</updated><id>/code-highlighting-post</id><content type="html" xml:base="/code-highlighting-post/">&lt;p&gt;Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;gfm-code-blocks&quot;&gt;GFM Code Blocks&lt;/h3&gt;
 
